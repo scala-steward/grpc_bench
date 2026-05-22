@@ -1,0 +1,7 @@
+packages:
+  .
+
+-- Compile the whole dep tree (grapesy, proto-lens-runtime, http2, tls, ...)
+-- at -O2 rather than cabal's default -O1. The bench's hot path is
+-- overwhelmingly in those libraries, not in our Main.hs.
+optimization: 2
